@@ -11,6 +11,7 @@
         devShells.default = mkShell {
           packages = [
             gnumake
+            python313Packages.west
           ];
         };
       }
