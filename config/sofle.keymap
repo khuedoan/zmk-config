@@ -9,7 +9,6 @@
 #define BASE 0
 #define NAV 1
 #define FUNC 2
-#define UTIL 3
 
 #define XCAPE  &mt LCTRL ESC
 #define NAVSPC &navspc NAV SPACE
@@ -44,15 +43,6 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        util_layer {
-            if-layers = <NAV FUNC>;
-            then-layer = <UTIL>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -74,7 +64,7 @@ XCAPE         &kp A        &kp S          &kp D           &kp F            &kp G
             display-name = "nav";
 
             bindings = <
-&trans        &trans       &trans         &trans          &trans           &trans                              &trans       &trans       &trans       &trans       &trans       &trans
+&bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4                        &out OUT_USB &out OUT_BLE &out OUT_TOG &bootloader  &sys_reset   &none
 &trans        &trans       &mkp MCLK      &mmv MOVE_UP    &msc SCRL_UP     &trans                              &trans       &trans       &trans       &trans       &trans       &trans
 &trans        &mkp LCLK    &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK                           &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
 &trans        &trans       &trans         &trans          &msc SCRL_DOWN   &trans      &trans      &trans      &trans       &trans       &kp LBKT     &kp RBKT     &kp BSLH     &trans
@@ -98,18 +88,5 @@ XCAPE         &kp A        &kp S          &kp D           &kp F            &kp G
             sensor-bindings = <&scroll_encoder &volume_encoder>;
         };
 
-        util_layer {
-            display-name = "util";
-
-            bindings = <
-&bt BT_CLR    &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4                        &out OUT_USB &out OUT_BLE &out OUT_TOG &bootloader  &sys_reset   &none
-&none         &none        &none          &none           &none            &none                               &none        &none        &none        &none        &none        &none
-&none         &none        &none          &none           &none            &none                               &none        &none        &none        &none        &none        &none
-&trans        &trans       &trans         &trans          &trans           &trans      &trans      &trans      &trans       &trans       &trans       &trans       &trans       &trans
-                           &trans         &trans          &trans           &trans      &trans      &trans      &trans       &trans       &trans       &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder &volume_encoder>;
-        };
     };
 };
