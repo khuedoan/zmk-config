@@ -29,20 +29,6 @@
             bindings = <&mo>, <&kp>;
             display-name = "Nav Space";
         };
-
-        scroll_encoder: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            // Encoder direction is mirrored
-            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
-        };
-
-        volume_encoder: volume_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            // Encoder direction is mirrored
-            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
-        };
     };
 
     keymap {
@@ -59,7 +45,7 @@ XCAPE         &kp A        &kp S          &kp D           &kp F            &kp G
                            &mo FUNC       &kp LALT        &kp LGUI         &kp SPACE   &mo NAV     &kp BSPC    NAVSPC       &mo FUNC     &kp RALT     &kp RCTRL
             >;
 
-            sensor-bindings = <&scroll_encoder &volume_encoder>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         nav_layer {
@@ -73,7 +59,7 @@ XCAPE         &kp A        &kp S          &kp D           &kp F            &kp G
                            &trans         &trans          &trans           &trans      &trans      &trans      &trans       &trans       &trans       &trans
             >;
 
-            sensor-bindings = <&scroll_encoder &volume_encoder>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         func_layer {
@@ -87,7 +73,7 @@ XCAPE         &kp A        &kp S          &kp D           &kp F            &kp G
                            &trans         &trans          &trans           &trans      &trans      &trans      &trans       &trans       &trans       &trans
             >;
 
-            sensor-bindings = <&scroll_encoder &volume_encoder>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>, <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
     };
