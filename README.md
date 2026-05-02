@@ -16,3 +16,15 @@ Board-ID: nRF52840-nicenano
 SoftDevice: S140 version 6.1.1
 Date: Jun 19 2021
 ```
+
+Flashing:
+
+- Download `firmware.zip` from GitHub Actions
+- Extract `firmware.zip`
+- Flash one half at a time (flash the left half first and test it over USB):
+    - Put the half into bootloader mode by double-clicking reset on the back
+    - Plug in USB, a `NICENANO` volume should appear
+    - Copy the matching file to the volume (`*left*.uf2` or `*right*.uf2`)
+    - Wait for the volume to unmount automatically
+- Power off both halves
+- Power both halves back on to let them pair
