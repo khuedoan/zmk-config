@@ -28,3 +28,5 @@ Flashing:
     - Wait for the volume to unmount automatically
 - Power off both halves
 - Power both halves back on to let them pair
+
+If a half stops working, flash `*settings_reset*.uf2` first, then flash that half again.
