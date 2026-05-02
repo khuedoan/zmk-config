@@ -2,4 +2,17 @@
 
 ## Hardware
 
-1. Sofle v1: `NRF52840` bluetooth, nice!view v2 OLED.
+### Sofle v1
+
+- `NRF52840` bluetooth
+- nice!view v2 OLED.
+
+Current firmware info:
+
+```
+UF2 Bootloader 0.6.0 lib/nrfx (v2.0.0) lib/tinyusb (0.10.1-41-gdf0cda2d) lib/uf2 (remotes/origin/configupdate-9-gadbb8c7)
+Model: nice!nano
+Board-ID: nRF52840-nicenano
+SoftDevice: S140 version 6.1.1
+Date: Jun 19 2021
+```
