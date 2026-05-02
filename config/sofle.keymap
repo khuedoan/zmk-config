@@ -2,6 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 4000
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
@@ -11,6 +13,11 @@
 
 #define XCAPE  &mt LCTRL ESC
 #define NAVSPC &navspc NAV SPACE
+
+&mmv {
+    trigger-period-ms = <20>;
+    time-to-max-speed-ms = <400>;
+};
 
 / {
     behaviors {
