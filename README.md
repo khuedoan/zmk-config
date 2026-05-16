@@ -17,7 +17,7 @@ SoftDevice: S140 version 6.1.1
 Date: Jun 19 2021
 ```
 
-Flashing:
+## Flashing
 
 - Download `firmware.zip` from GitHub Actions
 - Extract `firmware.zip`
@@ -30,3 +30,13 @@ Flashing:
 - Power both halves back on to let them pair
 
 If a half stops working, flash `*settings_reset*.uf2` first, then flash that half again.
+
+## Local build
+
+Build firmware with the same ZMK container used by GitHub Actions:
+
+```sh
+make
+```
+
+Generated UF2 files are written to `./build/artifacts`.
