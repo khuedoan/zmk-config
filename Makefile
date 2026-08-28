@@ -1,4 +1,6 @@
-.PHONY: build clean
+.PHONY: build clean keymap
+
+KEYMAP_DRAWER_VERSION := 0.23.0
 
 build:
 	mkdir -p build
@@ -31,6 +33,17 @@ build:
 				cp "build/$$shield/zephyr/zmk.uf2" "/build/artifacts/$$artifact_name.uf2"; \
 			}; \
 			'"$$builds"
+
+keymap:
+	mkdir -p assets build/keymap-drawer
+	uvx --from keymap-drawer==$(KEYMAP_DRAWER_VERSION) keymap \
+		-c keymap_drawer.config.yaml parse \
+		-z config/sofle.keymap \
+		-o build/keymap-drawer/sofle.yaml
+	uvx --from keymap-drawer==$(KEYMAP_DRAWER_VERSION) keymap \
+		-c keymap_drawer.config.yaml draw \
+		build/keymap-drawer/sofle.yaml \
+		-o assets/sofle.svg
 
 clean:
 	rm -rf build

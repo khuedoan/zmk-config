@@ -1,0 +1,13 @@
+parse_config:
+  raw_binding_map:
+    "&bootloader": BOOT
+    "&sys_reset": RESET
+    "&mkp LCLK": L CLICK
+    "&mkp MCLK": M CLICK
+    "&mkp RCLK": R CLICK
+    "&mmv MOVE_UP": MOUSE UP
+    "&mmv MOVE_LEFT": MOUSE LEFT
+    "&mmv MOVE_DOWN": MOUSE DOWN
+    "&mmv MOVE_RIGHT": MOUSE RIGHT
+    "&msc SCRL_UP": SCROLL UP
+    "&msc SCRL_DOWN": SCROLL DOWN

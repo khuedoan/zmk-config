@@ -12,6 +12,7 @@
           packages = [
             gnumake
             python313Packages.west
+            uv
             yq-go
           ];
         };
