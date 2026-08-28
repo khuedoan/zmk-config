@@ -1,8 +1,16 @@
 # ZMK Config
 
-## Hardware
+Personal ZMK firmware configuration for my custom wireless mechanical keyboards
+
+## Keyboards
 
 ### Sofle v1
+
+![Sofle keymap](assets/sofle.svg)
+
+(Regenerate the diagram with `make keymap`)
+
+Hardware:
 
 - `NRF52840` bluetooth
 - nice!view v2 OLED.
